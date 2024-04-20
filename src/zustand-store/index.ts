@@ -34,9 +34,9 @@ export const useStore = create<PlayerState>((set, get) => {
 
     load: async () => {
       set({ isLoading: true })
-      const response = await api.get('/courses/1')
+      const response = await api.get('/server.json?key=486757c0')
 
-      set({ course: response.data,
+      set({ course: response.data.courses[0],
             isLoading: false })
     }, 
 
